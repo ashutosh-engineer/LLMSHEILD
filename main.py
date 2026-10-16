@@ -11,13 +11,13 @@ class base(BaseModel):
     text:str
 
 
-    @app.get("/health")
-    def check_health():
-        return {"status" : "Healthy -Server is running"}
+@app.get("/health")
+def check_health():
+    return {"status" : "Healthy -Server is running"}
 
-    @app.get("/message")
-    def message() -> str:
-        return f"Fast API is running at {port}"
+@app.get("/message")
+def message() -> str:
+    return f"Fast API is running at {port}"
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=port, reload=True)
